@@ -23,6 +23,10 @@ a, p, h1, h2, h3, h4, h5, h6, span {
   color: #000000;
 }
 
+button, input {
+  border: none;
+}
+
 .container {
   min-width: 300px;
   padding-left: 10px;

@@ -3,11 +3,11 @@ import style from "./Header.module.css"
 function Header() {
   return (
     <header className={style.header}>
-      <div className="container" className={style.container}>
+      <div className="container">
         <nav className={style.nav}>
           <a href="./index.html">
             <img
-              src="../../src/images/logo.png"
+              src="./src/images/logo.png"
               alt="logo"
               className={style.header_image}
             />
@@ -35,7 +35,7 @@ function Header() {
             Sign up
           </button>
           <svg className={style.header_user}>
-            <use href="../../src/images/symbol-defs.svg#user"></use>
+            <use href="./src/images/symbol-defs.svg#user"></use>
           </svg>
         </div>
 

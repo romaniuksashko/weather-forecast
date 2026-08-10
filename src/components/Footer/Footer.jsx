@@ -5,33 +5,33 @@ function Footer() {
     <footer className={style.footer}>
       <div className="container">
         <a href="./index.html">
-          <img src="../../src/images/logo.png" alt="logo" />
+          <img src="./src/images/logo.png" alt="logo" className={style.footer_logo} />
         </a>
         <div>
-          <h3>Address</h3>
-          <p>Svobody str. 35 Kyiv Ukraine</p>
+          <h3 className={style.footer_title}>Address</h3>
+          <p  className={style.footer_address}>Svobody str. 35 Kyiv Ukraine</p>
         </div>
         <div>
-          <h3>Contacts</h3>
-          <ul>
+          <h3 className={style.footer_title}>Contacts</h3>
+          <ul className={style.footer_svglist}>
             <li>
               <a href="https://www.instagram.com/">
-                <svg>
-                  <use href="../../src/images/symbol-defs.svg#instagram"></use>
+                <svg className={style.footer_svg}>
+                  <use href="./src/images/symbol-defs.svg#instagram"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="https://www.facebook.com/">
-                <svg>
-                  <use href="../../src/images/symbol-defs.svg#facebook"></use>
+                <svg className={style.footer_svg}>
+                  <use href="./src/images/symbol-defs.svg#facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="https://www.whatsapp.com/">
-                <svg>
-                  <use href="../../src/images/symbol-defs.svg#whatsapp"></use>
+                <svg className={style.footer_svg}>
+                  <use href="./src/images/symbol-defs.svg#whatsapp"></use>
                 </svg>
               </a>
             </li>
