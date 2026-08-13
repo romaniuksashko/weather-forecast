@@ -1,6 +1,6 @@
 import style from "./Header.module.css"
 
-function Header() {
+function Header({menu, setMenu}) {
   return (
     <header className={style.header}>
       <div className="container">
@@ -39,6 +39,15 @@ function Header() {
           </svg>
         </div>
 
+        <button type="button" onClick={() => setMenu((prev) => !prev)} className={style.header_menu}>
+          Menu
+          {menu && <svg className={style.header_arrowright}>
+            <use href="./src/images/symbol-defs.svg#arrow-right"></use>
+          </svg>}
+          {!menu && <svg className={style.header_arrowdown}>
+            <use href="./src/images/symbol-defs.svg#arrow-down"></use>
+          </svg>}
+        </button>
       </div>
     </header>
   );

@@ -3,15 +3,20 @@ import './App.css'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Hero from './components/Hero/Hero'
+import News from './components/News/News'
+import Menu from './components/Menu/Menu'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [menu, setMenu] = useState(false);
+  
   return (
     <>
-      <Header />
-      <Hero/>
+      <Header menu={menu} setMenu={setMenu} />
+      
+      <Hero />
+      <News />
       <Footer />
+      {menu && <Menu/>}
     </>
   )
 }

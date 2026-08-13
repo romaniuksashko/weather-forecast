@@ -1,0 +1,43 @@
+.news {
+  display: none;
+}
+
+@media screen and (min-width: 1160px) {
+  .news {
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .news_title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .news_list {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .news_subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .news_button {
+    padding: 10px 30px;
+    background-color: #FFB36C;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    cursor: pointer;
+  }
+}

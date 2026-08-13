@@ -1,20 +1,21 @@
 .header {
+  position: fixed;
+  top: 0;
   padding-top: 14px;
   padding-bottom: 14px;
+  z-index: 100;
+  background-color: #FFFFFF;
+  width: 100%;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.2);  
 }
 
-.header > div {
+.header>div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 57px;
-}
+
 
 .header_image {
   width: 34px;
@@ -22,17 +23,15 @@
 }
 
 .header_list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 46px;
+  display: none;
+
 }
 
 .header_link {
   font-family: "Montserrat Alternates";
   font-size: 10px;
-    font-weight: 500;
-    line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .header_link:hover {
@@ -40,27 +39,31 @@
 }
 
 .header_flex {
+  display: none;
+}
+
+.header_menu {
+  font-family: "Montserrat Alternates";
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+
+  background: none;
 }
 
-.header_button {
-  border-radius: 10px;
-  border: none;
-  padding: 8px 16px;
-  border: none;
-  background-color: #FFB36C;
-  font-family: "Montserrat Alternates";
-  font-size: 10px;
-    font-weight: 400;
-    line-height: 1.2;
+.header_arrowdown {
+  height: 6px;
+  width: 6px;
 }
 
-.header_user {
-  width: 40px;
-  height: 40px;
-  margin-left: 25px;
+.header_arrowright {
+  width: 6px;
+  height: 6px;
 }
 
 @media screen and (min-width: 564px) {
@@ -69,13 +72,53 @@
     padding-bottom: 17px;
   }
 
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 57px;
+  }
+
   .header_image {
     width: 54px;
     height: 36px;
   }
 
+  .header_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+  }
+
+  .header_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
   .header_button {
+    display: inline;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 16px;
+    border: none;
+    background-color: #FFB36C;
+    font-family: "Montserrat Alternates";
+    font-size: 10px;
     font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .header_user {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header_menu {
+    display: none;
   }
 }
 
@@ -99,15 +142,18 @@
     line-height: 1.13;
   }
 
+  .header_flex {
+    gap: 27px;
+  }
+
   .header_button {
     font-size: 12px;
     padding: 10px 20px;
     line-height: 1.13;
   }
 
-    .header_user {
-      width: 50px;
-      height: 50px;
-      margin-left: 27px;
-    }
+  .header_user {
+    width: 50px;
+    height: 50px;
+  }
 }
