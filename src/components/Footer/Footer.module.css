@@ -4,6 +4,14 @@
   padding-bottom: 30px;
 }
 
+.footer_flex {
+  display: flex;
+  justify-content: start;
+  align-items: self-start;
+  gap: 75px;
+  margin-bottom: 25px;
+}
+
 .footer_logo {
   width: 50px;
   height: 34px;
@@ -18,6 +26,10 @@
   margin-bottom: 15px;
 }
 
+.footer_title[data-title="contacts"] {
+  text-align: center;
+}
+
 .footer_address {
   font-family: "Montserrat Alternates";
   font-size: 8px;
@@ -29,7 +41,7 @@
 .footer_svg {
   width: 35px;
   height: 35px;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 .footer_svglist {
@@ -45,10 +57,15 @@
     padding-bottom: 35px;
   }
 
-  .footer > div {
+  .footer>div {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: self-start;
+    gap: 100px;
+  }
+
+  .footer_flex {
+    margin-bottom: 0;
     gap: 100px;
   }
 
@@ -60,6 +77,10 @@
   .footer_title {
     font-size: 14px;
     line-height: 1.21;
+  }
+
+  .footer_title[data-title="contacts"] {
+    text-align: left;
   }
 
   .footer_address {
@@ -75,7 +96,11 @@
     padding-bottom: 64px;
   }
 
-  .footer > div {
+  .footer>div {
+    gap: 103px;
+  }
+
+  .footer_flex {
     gap: 103px;
   }
 

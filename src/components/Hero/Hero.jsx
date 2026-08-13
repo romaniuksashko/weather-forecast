@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
 import style from "./Hero.module.css";
 
 function Hero() {
+  const [citiesList, setCitiesList] = useState([]);
+  const [query, setQuery] = useState("");
+
   const date = new Date();
 
   const months = [
@@ -49,30 +53,42 @@ function Hero() {
     }
   };
 
+  const onChangeInput = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const onSearchLocation = (event) => {
+    event.preventDefault();
+  };
+
+  useEffect(() => {}, [query]);
+
   return (
     <section className={style.hero}>
       <div className="container">
         <h1 className={style.hero_title}>Weather dashboard</h1>
-        <div className={style.hero_wrapper}>
-          {/* <div className={style.hero_mobline}></div> */}
-          {/* <div> */}
-          <p className={style.hero_description}>
-            Create your personal list of favorite cities and always be aware of
-            the weather.
-          </p>
-          <div className={style.hero_line}></div>
-          <p className={style.hero_date}>
-            {month} {year} {dayOfWeek}, {dayOfMonth}
-            <sup>{denonymFunction()}</sup>
-          </p>
-          {/* </div> */}
+        <div className={style.hero_mobwrapper}>
+          <div className={style.hero_mobline}></div>
+          <div className={style.hero_wrapper}>
+            <p className={style.hero_description}>
+              Create your personal list of favorite cities and always be aware
+              of the weather.
+            </p>
+            <div className={style.hero_line}></div>
+            <p className={style.hero_date}>
+              {month} {year} {dayOfWeek}, {dayOfMonth}
+              <sup>{denonymFunction()}</sup>
+            </p>
+          </div>
         </div>
 
-        <form className={style.hero_form}>
+        <form className={style.hero_form} onSubmit={onSearchLocation}>
           <input
             type="text"
-            placeholder="Search location..."
+            placeholder="Search location(city, country code)..."
             className={style.hero_input}
+            onChange={onChangeInput}
+            value={query}
           />
           <button type="submit" className={style.hero_button}>
             <svg className={style.hero_svg}>
