@@ -54,7 +54,6 @@
   gap: 5px;
 
   background: none;
-  cursor: pointer;
 }
 
 .header_arrowdown {
@@ -99,6 +98,13 @@
     gap: 25px;
   }
 
+    .header_registrated {
+        font-family: "Montserrat Alternates";
+          font-size: 10px;
+          font-weight: 600;
+          line-height: 1.2;
+    }
+
   .header_button {
     display: inline;
     border-radius: 10px;
@@ -110,7 +116,6 @@
     font-size: 10px;
     font-weight: 500;
     line-height: 1.2;
-    cursor: pointer;
   }
 
   .header_user {
@@ -142,6 +147,11 @@
   .header_link {
     font-size: 12px;
     line-height: 1.13;
+  }
+
+  .header_registrated {
+    font-size: 12px;
+      line-height: 1.13;
   }
 
   .header_flex {

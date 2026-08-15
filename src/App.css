@@ -32,6 +32,10 @@ button, input {
   border: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   min-width: 280px;
   padding-left: 10px;

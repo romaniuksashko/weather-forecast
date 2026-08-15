@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "./Hero.module.css";
+import sprite from "../../images/symbol-defs.svg"
 
 function Hero() {
   const [citiesList, setCitiesList] = useState([]);
@@ -92,7 +93,7 @@ function Hero() {
           />
           <button type="submit" className={style.hero_button}>
             <svg className={style.hero_svg}>
-              <use href="./src/images/symbol-defs.svg#search"></use>
+              <use href={`${sprite}#search`}></use>
             </svg>
           </button>
         </form>

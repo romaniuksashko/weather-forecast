@@ -1,4 +1,6 @@
 import style from "./Header.module.css"
+import logo from "../../images/logo.png";
+import sprite from "../../images/symbol-defs.svg";
 
 function Header({ menu, changeMenu, changeModal }) {
   return (
@@ -6,11 +8,7 @@ function Header({ menu, changeMenu, changeModal }) {
       <div className="container">
         <nav className={style.nav}>
           <a href="./index.html">
-            <img
-              src="./src/images/logo.png"
-              alt="logo"
-              className={style.header_image}
-            />
+            <img src={logo} alt="logo" className={style.header_image} />
           </a>
           <ul className={style.header_list}>
             <li>
@@ -19,27 +17,33 @@ function Header({ menu, changeMenu, changeModal }) {
               </a>
             </li>
             <li>
-              <a href="#footer" className={style.header_link}>
+              <a href="#" className={style.header_link}>
                 Contacts
               </a>
             </li>
             <li>
-              <a href="#menu" className={style.header_link}>
+              <a href="#" className={style.header_link}>
                 Menu
               </a>
             </li>
           </ul>
         </nav>
         <div className={style.header_flex}>
-          <button
-            type="button"
-            className={style.header_button}
-            onClick={changeModal}
-          >
-            Sign up
-          </button>
+          {localStorage.getItem("userName") ? (
+            <p className={style.header_registrated}>
+              Hi, {localStorage.getItem("userName")}
+            </p>
+          ) : (
+            <button
+              type="button"
+              className={style.header_button}
+              onClick={changeModal}
+            >
+              Sign up
+            </button>
+          )}
           <svg className={style.header_user}>
-            <use href="./src/images/symbol-defs.svg#user"></use>
+            <use href={`${sprite}#user`}></use>
           </svg>
         </div>
 
@@ -51,12 +55,12 @@ function Header({ menu, changeMenu, changeModal }) {
           Menu
           {menu && (
             <svg className={style.header_arrowright}>
-              <use href="./src/images/symbol-defs.svg#arrow-right"></use>
+              <use href={`${sprite}#arrow-right`}></use>
             </svg>
           )}
           {!menu && (
             <svg className={style.header_arrowdown}>
-              <use href="./src/images/symbol-defs.svg#arrow-down"></use>
+              <use href={`${sprite}#arrow-down`}></use>
             </svg>
           )}
         </button>

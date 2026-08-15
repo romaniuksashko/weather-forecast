@@ -12,7 +12,7 @@ function Modal({changeModal}) {
     <div className={style.modal_overlay} onClick={closeModal}>
       <div className={style.modal_background}>
         <h2 className={style.modal_title}>Sign up</h2>
-        <Form />
+        <Form changeModal={changeModal} />
         <p className={style.modal_question}>
           Already have an account? {""}
           <span className={style.modal_change}>Log In</span>
