@@ -1,11 +1,15 @@
 import style from "./Menu.module.css";
 import { useEffect, useState } from "react";
 
-function Menu() {
-  // const [news, setNews] = useState([]);
+function Menu({changeModal,changeMenu}) {
+  const closeMenu = (event) => {
+    if (event.target === event.currentTarget) {
+      changeMenu();
+    }
+  }
 
   return (
-    <div className={style.menu_overlay}>
+    <div className={style.menu_overlay} onClick={closeMenu} >
       <div className={style.menu_background}>
         <div className="container">
         <ul>
@@ -23,7 +27,7 @@ function Menu() {
           <svg className={style.menu_user}>
             <use href="./src/images/symbol-defs.svg#user"></use>
           </svg>
-          <button type="button" className={style.menu_button}>
+          <button type="button" className={style.menu_button} onClick={changeModal}>
             Sign up
           </button>          
         </div>          

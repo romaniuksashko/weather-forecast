@@ -1,6 +1,6 @@
 import style from "./Header.module.css"
 
-function Header({menu, setMenu}) {
+function Header({ menu, changeMenu, changeModal }) {
   return (
     <header className={style.header}>
       <div className="container">
@@ -11,7 +11,7 @@ function Header({menu, setMenu}) {
               alt="logo"
               className={style.header_image}
             />
-          </a>          
+          </a>
           <ul className={style.header_list}>
             <li>
               <a href="#" className={style.header_link}>
@@ -31,7 +31,11 @@ function Header({menu, setMenu}) {
           </ul>
         </nav>
         <div className={style.header_flex}>
-          <button type="button" className={style.header_button}>
+          <button
+            type="button"
+            className={style.header_button}
+            onClick={changeModal}
+          >
             Sign up
           </button>
           <svg className={style.header_user}>
@@ -39,14 +43,22 @@ function Header({menu, setMenu}) {
           </svg>
         </div>
 
-        <button type="button" onClick={() => setMenu((prev) => !prev)} className={style.header_menu}>
+        <button
+          type="button"
+          onClick={changeMenu}
+          className={style.header_menu}
+        >
           Menu
-          {menu && <svg className={style.header_arrowright}>
-            <use href="./src/images/symbol-defs.svg#arrow-right"></use>
-          </svg>}
-          {!menu && <svg className={style.header_arrowdown}>
-            <use href="./src/images/symbol-defs.svg#arrow-down"></use>
-          </svg>}
+          {menu && (
+            <svg className={style.header_arrowright}>
+              <use href="./src/images/symbol-defs.svg#arrow-right"></use>
+            </svg>
+          )}
+          {!menu && (
+            <svg className={style.header_arrowdown}>
+              <use href="./src/images/symbol-defs.svg#arrow-down"></use>
+            </svg>
+          )}
         </button>
       </div>
     </header>
