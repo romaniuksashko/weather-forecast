@@ -18,7 +18,7 @@ function News() {
   }, []);
 
   const openWindowNews = () => {
-    window.open('https://www.bbc.com');
+    window.open("https://www.bbc.com/future-planet");
   }
 
   return (

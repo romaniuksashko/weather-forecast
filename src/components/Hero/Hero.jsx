@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from "./Hero.module.css";
-import sprite from "../../images/symbol-defs.svg"
+import sprite from "../../images/symbol-defs.svg";
 
-function Hero() {
-  const [citiesList, setCitiesList] = useState([]);
-  const [query, setQuery] = useState("");
 
+function Hero({ setSearch}) {
   const date = new Date();
+  const [query, setQuery] = useState("");
 
   const months = [
     "January",
@@ -60,9 +59,9 @@ function Hero() {
 
   const onSearchLocation = (event) => {
     event.preventDefault();
-  };
 
-  useEffect(() => {}, [query]);
+    setSearch(query);
+  };
 
   return (
     <section className={style.hero}>

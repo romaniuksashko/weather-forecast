@@ -1,29 +1,55 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Hero from './components/Hero/Hero'
-import News from './components/News/News'
-import Menu from './components/Menu/Menu'
-import Modal from './components/Modal/Modal'
+import { useState, useEffect } from "react";
+import "./App.css";
+import { fetchLocations, fetchWeather } from "./apis/weatherApi";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import News from "./components/News/News";
+import Menu from "./components/Menu/Menu";
+import Modal from "./components/Modal/Modal";
+import ForecastList from "./components/ForecastList/ForecastList";
 
 function App() {
   const [menu, setMenu] = useState(false);
   const [signUp, setSignUp] = useState(false);
+  const [citiesList, setCitiesList] = useState([]);
+
+  const [search, setSearch] = useState("");
+  // const [searchResult, setSearchResult] = useState({});
 
   const changeModal = () => {
-    setSignUp((prev) => !prev)
-  }
+    setSignUp((prev) => !prev);
+  };
 
   const changeMenu = () => {
-    setMenu((prev) => !prev)
-  }
-  
+    setMenu((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (!search.trim()) {
+      return;
+    }
+
+    const getCoordinates = async () => {
+      try {
+        const city = await fetchLocations(search);
+        const cityWeather = await fetchWeather(city.lat, city.lon);
+        console.log(cityWeather);
+        setCitiesList((prev) => [...prev, cityWeather]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getCoordinates();
+  }, [search]);
+
   return (
     <>
       <Header menu={menu} changeMenu={changeMenu} changeModal={changeModal} />
 
-      <Hero />
+      <Hero setSearch={setSearch} />
+      <ForecastList citiesList={citiesList} />
       <News />
       <Footer />
       {menu && <Menu changeModal={changeModal} changeMenu={changeMenu} />}
@@ -32,4 +58,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
