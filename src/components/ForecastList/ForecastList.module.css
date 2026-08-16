@@ -1,7 +1,14 @@
+.forecast {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
 .forecast_list {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .forecast_item {
@@ -29,6 +36,16 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 11px;
+}
+
+.forecast_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
 }
 
 .forecast_hourly {
@@ -47,13 +64,14 @@
   border-radius: 5px;
 
   font-size: 9px;
-    font-weight: 500;
-    line-height: 1.22;
+  font-weight: 500;
+  line-height: 1.22;
 }
 
 .forecast_img {
   width: 83px;
   height: 83px;
+  margin: 25px auto;
 }
 
 .forecast_temperature {
@@ -89,8 +107,25 @@
 }
 
 @media screen and (min-width: 564px) {
+  .forecast {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  .forecast_list {
+    column-gap: 110px;
+    row-gap: 50px;
+  }
+
   .forecast_item {
     padding: 15px 25px;
+  }
+
+
+
+  .forecast_time {
+    margin-top: 11px;
+    margin-bottom: 8px;
   }
 
   .forecast_img {
@@ -100,66 +135,84 @@
 }
 
 @media screen and (min-width: 1160px) {
+  .forecast {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .forecast_list {
+    column-gap: 90px;
+    row-gap: 80px;
+  }
+
   .forecast_item {
-      padding: 15px 30px 20px;
-    }
+    padding: 15px 30px 20px;
+  }
 
-    .forecast_name {
-      font-size: 14px;
-      line-height: 1.21;
-    }
+  .forecast_buttons {
+    gap: 25px;
+  }
 
-    .forecast_flag {
-      height: 17px;
-    }
+  .forecast_name {
+    font-size: 14px;
+    line-height: 1.21;
+  }
 
-    .forecast_time {
-      font-size: 24px;
-      line-height: 1.21;
-      border-radius: 10px;
-    }
+  .forecast_flag {
+    height: 17px;
+  }
 
-    .forecast_hourly {
-      font-size: 10px;
-      line-height: 1.2;
-      border-radius: 10px;
-    }
+  .forecast_time {
+    font-size: 24px;
+    line-height: 1.21;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
 
-    .forecast_weekly {
-      font-size: 10px;
-        line-height: 1.2;
-    }
+  .forecast_hourly {
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 10px;
+  }
 
-    .forecast_img {
-      width: 120px;
-      height: 120px;
-    }
+  .forecast_weekly {
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 10px;
+  }
 
-    .forecast_temperature {
-      font-size: 32px;
-      line-height: 1.22;
-    }
+  .forecast_img {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+  }
 
-        .forecast_rotate {
-          width: 30px;
-          height: 30px;
-        }
-    
-        .forecast_heart {
-          width: 30px;
-          height: 30px;
-        }
-    
-        .forecast_more {
-          padding: 8px 25px;
-          border-radius: 10px;
-    
-          font-size: 10px;
-          line-height: 1.2;
-        }
-    
-        .forecast_trash {
-          width: 30px;
-          height: 30px;
-        }
+  .forecast_temperature {
+    font-size: 32px;
+    line-height: 1.22;
+  }
+
+  .forecast_rotate {
+    width: 30px;
+    height: 30px;
+  }
+
+  .forecast_heart {
+    width: 30px;
+    height: 30px;
+  }
+
+  .forecast_more {
+    padding: 8px 25px;
+    border-radius: 10px;
+
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .forecast_trash {
+    width: 30px;
+    height: 30px;
+  }
 }

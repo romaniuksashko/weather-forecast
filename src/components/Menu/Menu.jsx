@@ -1,4 +1,5 @@
 import style from "./Menu.module.css";
+import sprite from "../../images/symbol-defs.svg";
 import { useEffect, useState } from "react";
 
 function Menu({changeModal,changeMenu}) {
@@ -25,7 +26,7 @@ function Menu({changeModal,changeMenu}) {
         </ul>
         <div className={style.menu_flex}>
           <svg className={style.menu_user}>
-            <use href="./src/images/symbol-defs.svg#user"></use>
+            <use href={`${sprite}#user`}></use>
           </svg>
           <button type="button" className={style.menu_button} onClick={changeModal}>
             Sign up

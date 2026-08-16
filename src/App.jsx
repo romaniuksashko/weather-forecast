@@ -15,7 +15,15 @@ function App() {
   const [citiesList, setCitiesList] = useState([]);
 
   const [search, setSearch] = useState("");
-  // const [searchResult, setSearchResult] = useState({});
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   const changeModal = () => {
     setSignUp((prev) => !prev);
@@ -48,8 +56,8 @@ function App() {
     <>
       <Header menu={menu} changeMenu={changeMenu} changeModal={changeModal} />
 
-      <Hero setSearch={setSearch} />
-      <ForecastList citiesList={citiesList} />
+      <Hero daysOfWeek={daysOfWeek} setSearch={setSearch} />
+      <ForecastList citiesList={citiesList} daysOfWeek={daysOfWeek} />
       <News />
       <Footer />
       {menu && <Menu changeModal={changeModal} changeMenu={changeMenu} />}

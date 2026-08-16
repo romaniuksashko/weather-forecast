@@ -3,7 +3,7 @@ import style from "./Hero.module.css";
 import sprite from "../../images/symbol-defs.svg";
 
 
-function Hero({ setSearch}) {
+function Hero({daysOfWeek, setSearch}) {
   const date = new Date();
   const [query, setQuery] = useState("");
 
@@ -21,15 +21,7 @@ function Hero({ setSearch}) {
     "November",
     "December",
   ];
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+
 
   const month = months[date.getMonth()];
   const year = date.getFullYear();
