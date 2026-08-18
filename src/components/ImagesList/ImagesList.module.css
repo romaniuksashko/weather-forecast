@@ -1,0 +1,115 @@
+.images {
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.images_buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.embla__prev {
+  padding: 8px 10px;
+  background-color: #FFB36C;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.22;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.embla__next {
+  padding: 8px 10px;
+  background-color: #FFB36C;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.svg_left {
+  transform: rotate(180deg);
+  height: 11px;
+  width: 11px;
+}
+
+.svg_right {
+  height: 11px;
+  width: 11px;
+}
+
+@media screen and (min-width: 564px) {
+  .images {
+    padding-top: 25px;
+    padding-bottom: 50px;
+  }
+
+  .images_buttons {
+    margin-top: 15px;
+    gap: 15px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .images {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .images_buttons {
+    margin-top: 20px;
+    gap: 25px;
+  }
+
+  .embla__prev {
+    padding: 10px 15px;
+
+    font-size: 14px;
+    line-height: 1.21;
+  }
+
+  .embla__next {
+    padding: 10px 15px;
+
+    font-size: 14px;
+    line-height: 1.21;
+  }
+
+  .svg_left {
+    height: 17px;
+    width: 17px;
+  }
+
+  .svg_right {
+    height: 17px;
+    width: 17px;
+  }
+}

@@ -7,7 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body{
+body {
   padding-top: 50px;
 }
 
@@ -24,11 +24,20 @@ img {
   display: block;
 }
 
-a, p, h1, h2, h3, h4, h5, h6, span {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
   color: #000000;
 }
 
-button, input {
+button,
+input {
   border: none;
 }
 
@@ -50,12 +59,20 @@ button {
 }
 
 @media screen and (min-width: 564px) {
+  body {
+    padding-top: 74px;
+  }
+
   .container {
     width: 564px;
   }
 }
 
 @media screen and (min-width: 1160px) {
+  body {
+    padding-top: 80px;
+  }
+
   .container {
     width: 1160px;
   }
