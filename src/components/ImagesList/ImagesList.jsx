@@ -4,15 +4,25 @@ import style from "./ImagesList.module.css";
 import { useEffect, useState } from "react";
 import { fetchImages } from "../../apis/imagesApi";
 import sprite from "../../images/symbol-defs.svg"
+import Loader from "../Loader/Loader";
 
 function ImagesList() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [images, setImages] = useState([]);
+  const [loadingImg, setLoadingImg] = useState(false);
 
   useEffect(() => {
+    setLoadingImg(true)
     const getImages = async () => {
-      const data = await fetchImages();
-      setImages(data);
+      try {
+        const data = await fetchImages();        
+        setImages(data);
+      } catch (err) {
+        console.log(`Error occured:${err}`);
+      } finally {
+        setLoadingImg(false);
+        
+      }
     };
 
     getImages();
@@ -25,7 +35,9 @@ function ImagesList() {
     <section className={style.images}>
       <div className="container">
         <div className={style.embla}>
+          {loadingImg && <Loader />}
           <div className={style.embla__viewport} ref={emblaRef}>
+            
             <ul className={style.embla__container}>
               {images.map(({ id, largeImageURL, tags }) => (
                 <li className={style.embla__slide} key={id}>
@@ -47,10 +59,8 @@ function ImagesList() {
               <svg className={style.svg_right}>
                 <use href={`${sprite}#arrow-right`}></use>
               </svg>
-            </button>            
+            </button>
           </div>
-
-
         </div>
       </div>
     </section>

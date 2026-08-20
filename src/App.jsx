@@ -45,6 +45,8 @@ function App() {
         const city = await fetchLocations(search);
         const cityWeather = await fetchWeather(city.name, city.lat, city.lon);
         setCitiesList((prev) => [...prev, cityWeather]);
+        console.log(citiesList);
+        
       } catch (error) {
         console.log(error);
       }
@@ -62,12 +64,17 @@ function App() {
     setCitiesList((prev) => prev.map(item => item.id === locationWeather.id ? locationWeather : item));
   }
 
+  const deleteWeather = (id) => {
+    const deletion = citiesList.filter((card) => card.id !== id);
+    setCitiesList(deletion)
+  }
+
   return (
     <>
       <Header menu={menu} changeMenu={changeMenu} changeModal={changeModal} />
 
       <Hero daysOfWeek={daysOfWeek} setSearch={setSearch} />
-      <ForecastList citiesList={citiesList} daysOfWeek={daysOfWeek} updateWeather={updateWeather} date={date} />
+      <ForecastList citiesList={citiesList} daysOfWeek={daysOfWeek} updateWeather={updateWeather} date={date} deleteWeather={deleteWeather} />
       <News />
       <ImagesList />
 

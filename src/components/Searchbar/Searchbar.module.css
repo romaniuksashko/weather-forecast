@@ -1,0 +1,82 @@
+.hero_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.hero_input {
+  background-color: #D9D9D9;
+  border-radius: 5px 0 0 5px;
+  padding: 4px 10px 4px 10px;
+  font-size: 6px;
+  line-height: 1.17;
+  font-weight: 500;
+  color: #3b3b3b;
+
+  width: 158px;
+}
+
+.hero_button {
+  border-radius: 0 5px 5px 0;
+  border-left: 2px solid #000000;
+  padding: 3px;
+  background-color: #FFB36C;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hero_svg {
+  width: 9px;
+  height: 9px;
+}
+
+@media screen and (min-width: 564px) {
+  .hero_form {
+    margin-top: 63px;
+  }
+
+  .hero_input {
+    padding: 8px 18px 8px 18px;
+    font-size: 10px;
+    line-height: 1.2px;
+
+    width: 373px;
+  }
+
+  .hero_button {
+    border-radius: 0 10px 10px 0;
+    padding: 6px;
+  }
+
+  .hero_svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .hero_form {
+    margin-top: 77px;
+  }
+
+  .hero_input {
+    padding: 14px 29px 14px 29px;
+    font-size: 14px;
+    line-height: 1.21px;
+
+    width: 580px;
+  }
+
+  .hero_button {
+    padding: 10px;
+  }
+
+  .hero_svg {
+    width: 25px;
+    height: 25px;
+  }
+}

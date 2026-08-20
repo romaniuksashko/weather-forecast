@@ -20,11 +20,11 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "gh-pages": "^6.3.0",
-    "normalize.css": "^8.0.1",
     "react": "^19.2.8",
     "react-country-flag": "^3.1.0",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
+    "react-loader-spinner": "^8.0.2",
     "react-toastify": "^11.1.0"
   },
   "devDependencies": {

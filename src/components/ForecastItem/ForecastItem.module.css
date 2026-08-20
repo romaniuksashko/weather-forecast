@@ -157,6 +157,7 @@
 .forecast_trash {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 564px) {

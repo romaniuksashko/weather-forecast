@@ -1,11 +1,10 @@
-import { useState } from "react";
 import style from "./Hero.module.css";
 import sprite from "../../images/symbol-defs.svg";
+import Searchbar from "../Searchbar/Searchbar";
 
 
 function Hero({daysOfWeek, setSearch}) {
   const date = new Date();
-  const [query, setQuery] = useState("");
 
   const months = [
     "January",
@@ -45,16 +44,6 @@ function Hero({daysOfWeek, setSearch}) {
     }
   };
 
-  const onChangeInput = (event) => {
-    setQuery(event.target.value);
-  };
-
-  const onSearchLocation = (event) => {
-    event.preventDefault();
-
-    setSearch(query);
-  };
-
   return (
     <section className={style.hero}>
       <div className="container">
@@ -74,20 +63,7 @@ function Hero({daysOfWeek, setSearch}) {
           </div>
         </div>
 
-        <form className={style.hero_form} onSubmit={onSearchLocation}>
-          <input
-            type="text"
-            placeholder="Search location(city, country code)..."
-            className={style.hero_input}
-            onChange={onChangeInput}
-            value={query}
-          />
-          <button type="submit" className={style.hero_button}>
-            <svg className={style.hero_svg}>
-              <use href={`${sprite}#search`}></use>
-            </svg>
-          </button>
-        </form>
+        <Searchbar setSearch={setSearch} />
       </div>
     </section>
   );

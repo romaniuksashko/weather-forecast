@@ -2,7 +2,19 @@ import style from "./ForecastItem.module.css";
 import sprite from "../../images/symbol-defs.svg";
 import ReactCountryFlag from "react-country-flag";
 
-function ForecastItem({ main, weather, name, sys, wind, visibility, daysOfWeek, updateWeather, date }) {
+function ForecastItem({
+  id,
+  main,
+  weather,
+  name,
+  sys,
+  wind,
+  visibility,
+  daysOfWeek,
+  updateWeather,
+  date,
+  deleteWeather
+}) {
   return (
     <li className={style.forecast_item}>
       <div className={style.forecast_base}>
@@ -48,24 +60,26 @@ function ForecastItem({ main, weather, name, sys, wind, visibility, daysOfWeek, 
 
       <div className={style.forecast_bottom}>
         <div className={style.forecast_functional}>
-          <svg className={style.forecast_rotate} onClick={() => updateWeather(name)}>
+          <svg
+            className={style.forecast_rotate}
+            onClick={() => updateWeather(name)}
+          >
             <use href={`${sprite}#rotate`}></use>
           </svg>
 
           <svg className={style.forecast_heart}>
             <use href={`${sprite}#heart`}></use>
-          </svg>        
+          </svg>
         </div>
 
         <button type="button" className={style.forecast_more}>
           See more
         </button>
 
-        <svg className={style.forecast_trash}>
+        <svg className={style.forecast_trash} onClick={() => deleteWeather(id)}>
           <use href={`${sprite}#trash`}></use>
-        </svg>        
+        </svg>
       </div>
-
     </li>
   );
 }
