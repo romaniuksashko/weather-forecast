@@ -9,12 +9,15 @@ import Menu from "./components/Menu/Menu";
 import Modal from "./components/Modal/Modal";
 import ForecastList from "./components/ForecastList/ForecastList";
 import ImagesList from "./components/ImagesList/ImagesList";
+import ForecastInfo from "./components/ForecastInfo/ForecastInfo";
 
 function App() {
   const [menu, setMenu] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [citiesList, setCitiesList] = useState([]);
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(new Date());
+  const [info, setInfo] = useState({});
+  const [infoShow, setInfoShow] = useState(false)
 
   const [search, setSearch] = useState("");
   const daysOfWeek = [
@@ -69,12 +72,32 @@ function App() {
     setCitiesList(deletion)
   }
 
+  const detailWeather = (main, visibility, wind) => {
+    setInfo({
+      main: main,
+      visibility: visibility,
+      wind: wind,
+    })
+
+    setInfoShow((prev) => !prev);
+  }
+
   return (
     <>
       <Header menu={menu} changeMenu={changeMenu} changeModal={changeModal} />
 
       <Hero daysOfWeek={daysOfWeek} setSearch={setSearch} />
-      <ForecastList citiesList={citiesList} daysOfWeek={daysOfWeek} updateWeather={updateWeather} date={date} deleteWeather={deleteWeather} />
+      <ForecastList
+        citiesList={citiesList}
+        daysOfWeek={daysOfWeek}
+        updateWeather={updateWeather}
+        date={date}
+        deleteWeather={deleteWeather}
+        detailWeather={detailWeather}
+      />
+
+      {infoShow && <ForecastInfo info={info} />}
+
       <News />
       <ImagesList />
 

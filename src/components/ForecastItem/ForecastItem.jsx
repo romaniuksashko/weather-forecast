@@ -13,7 +13,8 @@ function ForecastItem({
   daysOfWeek,
   updateWeather,
   date,
-  deleteWeather
+  deleteWeather,
+  detailWeather,
 }) {
   return (
     <li className={style.forecast_item}>
@@ -72,7 +73,11 @@ function ForecastItem({
           </svg>
         </div>
 
-        <button type="button" className={style.forecast_more}>
+        <button
+          type="button"
+          className={style.forecast_more}
+          onClick={() => detailWeather(main, visibility, wind)}
+        >
           See more
         </button>
 
