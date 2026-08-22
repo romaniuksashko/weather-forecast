@@ -50,7 +50,7 @@ function ForecastInfo({ info }) {
           </li>
           <li className={style.info__card}>
             <h3 className={style.info__title}>Visibility</h3>
-            <p className={style.info__data}>{visibility}</p>
+            <p className={style.info__data}>{visibility/1000} km</p>
             <img
               src={visibilityImage}
               alt="visibility"

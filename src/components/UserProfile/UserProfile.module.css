@@ -1,0 +1,104 @@
+.profile__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 110;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+#profile__image {
+  background-color: #FFB36C;
+  width: 90px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.profile__base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.profile__name {
+  font-family: "Montserrat Alternates";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.profile__email {
+  color: rgb(104, 104, 104);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.profile__song {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.profile__status {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.profile__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.profile__button {
+  background-color: #FFB36C;
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.profile__logoff {
+  background-color: #FFB36C;
+  padding: 10px 30px;
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+
+  width: 100%;
+}

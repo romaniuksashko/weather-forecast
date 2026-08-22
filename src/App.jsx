@@ -10,6 +10,7 @@ import Modal from "./components/Modal/Modal";
 import ForecastList from "./components/ForecastList/ForecastList";
 import ImagesList from "./components/ImagesList/ImagesList";
 import ForecastInfo from "./components/ForecastInfo/ForecastInfo";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -17,7 +18,8 @@ function App() {
   const [citiesList, setCitiesList] = useState([]);
   const [date, setDate] = useState(new Date());
   const [info, setInfo] = useState({});
-  const [infoShow, setInfoShow] = useState(false)
+  const [infoShow, setInfoShow] = useState(false);
+  const [profile, setProfile] = useState(false)
 
   const [search, setSearch] = useState("");
   const daysOfWeek = [
@@ -37,6 +39,10 @@ function App() {
   const changeMenu = () => {
     setMenu((prev) => !prev);
   };
+
+  const changeProfile = () => {
+    setProfile((prev) => !prev);
+  }
 
   useEffect(() => {
     if (!search.trim()) {
@@ -84,7 +90,12 @@ function App() {
 
   return (
     <>
-      <Header menu={menu} changeMenu={changeMenu} changeModal={changeModal} />
+      <Header
+        menu={menu}
+        changeMenu={changeMenu}
+        changeModal={changeModal}
+        changeProfile={changeProfile}
+      />
 
       <Hero daysOfWeek={daysOfWeek} setSearch={setSearch} />
       <ForecastList
@@ -102,8 +113,15 @@ function App() {
       <ImagesList />
 
       <Footer />
-      {menu && <Menu changeModal={changeModal} changeMenu={changeMenu} />}
+      {menu && (
+        <Menu
+          changeModal={changeModal}
+          changeMenu={changeMenu}
+          changeProfile={changeProfile}
+        />
+      )}
       {signUp && <Modal changeModal={changeModal} />}
+      {profile && <UserProfile changeProfile={changeProfile} />}
     </>
   );
 }

@@ -118,10 +118,11 @@
     line-height: 1.2;
   }
 
-  .header_user {
-    display: block;
+  #header_user {
     width: 40px;
     height: 40px;
+    cursor: pointer;
+    background-color: #FFB36C;
   }
 
   .header_menu {

@@ -1,8 +1,9 @@
 import style from "./Header.module.css"
 import logo from "../../images/logo.png";
 import sprite from "../../images/symbol-defs.svg";
+import { Avatar } from "@mui/material";
 
-function Header({ menu, changeMenu, changeModal }) {
+function Header({ menu, changeMenu, changeModal, changeProfile }) {
   return (
     <header className={style.header}>
       <div className="container">
@@ -42,9 +43,7 @@ function Header({ menu, changeMenu, changeModal }) {
               Sign up
             </button>
           )}
-          <svg className={style.header_user}>
-            <use href={`${sprite}#user`}></use>
-          </svg>
+          <Avatar id={style.header_user} onClick={changeProfile} />
         </div>
 
         <button

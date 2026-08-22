@@ -8,6 +8,7 @@ function Form({changeModal}) {
 
     // console.log(localStorage.getItem("userName"));
     localStorage.setItem("userName", event.target.name.value);
+    localStorage.setItem("userEmail", event.target.email.value);
   }
 
   return (
